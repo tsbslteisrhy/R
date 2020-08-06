@@ -2,11 +2,9 @@
 #이름 : 유효진
 #내용 : 텍스트 시각화
 
-install.packages('devtools')
-devtools::install_github('haven-jeon/KoNLP')
-
 install.packages("multilinguer")
 library(multilinguer)
+
 
 install_jdk()
 install.packages(c('stringr', 'hash', 'tau', 'Sejong', 'RSQLite', 'devtools'), type = "binary")
