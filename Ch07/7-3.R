@@ -24,6 +24,7 @@ pairs(df_product)
 corrgram(df_product, upper.panel = panel.conf)
 
 #도전 붓꽃데이터 상관분석
+
 View(iris)
 
 df_iris <- iris %>% select(-Species)
@@ -33,3 +34,4 @@ cor(df_iris, method = 'pearson')
 
 pairs(df_iris)
 corrgram(df_iris, lower.panel = panel.conf)
+
