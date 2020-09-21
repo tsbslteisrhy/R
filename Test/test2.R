@@ -38,11 +38,17 @@ df_new <- merge(x = df_new,
 
 df_new <- df_new[,-1]
 df_new <- t(df_new)
-colnames(df_new) <- c('operate', 'use', 'clean', 'info', 'clean', 'transfer', 'safe')
+colnames(df_new) <- c('operate', 'use', 'clean', 'info', 'access', 'transfer', 'safe')
 View(df_new)
 
-df_new %>% mutate(total=safe+operate+use+access+info+clean+transfer, mean=total/7)
+df_new <- data.frame(df_new)
 View(df_new)
+
+df_result <- df_new %>% mutate(total = safe+operate+use+access+info+clean+transfer) %>%
+                        mutate(mean = total/7)
+View(df_result)
+
+barplot(df_result$mean, ylim = c(4.60, 4.70))
 
 
 #독립변수와 종속변수 생성
